@@ -1,0 +1,30 @@
+{
+  "name": "synthesis-project",
+  "version": "1.0.0",
+  "description": "real time chat app for study database speed and security",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "jade": "^0.29.0",
+    "mongodb": "^3.6.5",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "redis": "^3.1.0",
+    "sqlite3": "^5.0.1"
+  },
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xARK/synthesis-project.git"
+  },
+  "author": "Mateo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xARK/synthesis-project/issues"
+  },
+  "homepage": "https://github.com/0xARK/synthesis-project#readme"
+}

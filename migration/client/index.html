@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQLMigrate</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/addons.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-brand mb-0 h1 text-white bg-">SQLMigrate</span>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="codeToConvert">Oracle code</label>
+                    <textarea class="form-control" id="codeToConvert" rows="15"></textarea>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="convertedCode">Mysql code</label>
+                    <textarea class="form-control" id="convertedCode" rows="15"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p id="convertError" class="text-danger"></p>
+            </div>
+            <div class="col-2 offset-2">
+                <button type="button" class="btn btn-block btn-dark text-white">Convert</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib.js"></script>
+</body>
+</html>
