@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        title Database tests
+        meta(charset='UTF-8')
+        link(rel='stylesheet', href='css/bootstrap.min.css')
+    body
+        br
+        button(type='submit', id='run_mysql_test') Run mysql tests
+        div(id='results-mysql')
+        br
+        button(type='submit', id='run_sqlite_test') Run sqlite tests
+        div(id='results-sqlite')
+        br
+        button(type='submit', id='run_local_storage_test') Run local storage tests
+        div(id='results-local-storage')
+        br
+        button(type='submit', id='run_mongodb_test') Run mongodb tests
+        div(id='results-mongodb')
+        br
+        button(type='submit', id='run_redis_test') Run redis tests
+        div(id='results-redis')
+        script(src='js/jquery.min.js')
+        script(src='js/bootstrap.min.js')
+        script(src='js/lib.js')
