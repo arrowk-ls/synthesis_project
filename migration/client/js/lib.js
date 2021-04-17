@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     /**
-     * Convert code
+     * Solution 1 : convert code
      */
     $('#convert').on('click', function() {
 
@@ -103,6 +103,41 @@ $(document).ready(function() {
 
     })
 
-})
+    /**
+     * Solution 2 : migrate rows
+     */
+    $('#migrate').on('click', function () {
 
-//  CREATE TABLE "REGISTRATIONS" ("EV_ID" NUMBER, "MEM_ID" NUMBER, "REG_DATE" DATE DEFAULT sysdate);
+        let o_hostname = $('#oracle_hostname').val(),
+            o_user = $('#oracle_user').val(),
+            o_password = $('#oracle_password').val(),
+            o_port = $('#oracle_port').val(),
+            o_database = $('#oracle_database').val(),
+            m_hostname = $('#mysql_hostname').val(),
+            m_user = $('#mysql_user').val(),
+            m_password = $('#mysql_password').val(),
+            m_port = $('#mysql_port').val(),
+            m_database = $('#mysql_database').val();
+
+        $.ajax({
+            url: '/',
+            type: 'post',
+            data: 'action=migrate&oracle_hostname=' + o_hostname + '&oracle_user=' + o_user + '&oracle_password=' + o_password + '&oracle_port=' + o_port + '&oracle_database=' + o_database +
+                '&mysql_hostname=' + m_hostname + '&mysql_user=' + m_user + '&mysql_password=' + m_password + '&mysql_port=' + m_port + '&mysql_database=' + m_database,
+            success: response => {
+                alert(response)
+                if (response.success) {
+                    alert('ok')
+                } else if (response.error) {
+                    $('#migrateError').text(response.error)
+                }
+            },
+            error: error => {
+                alert('error')
+                $('#migrateError').text(error)
+            }
+        })
+
+    })
+
+})

@@ -9,10 +9,14 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
 
-    if (req.body.action === "run_sqlite_test") {
+    if (req.body.action === "migrate") {
+
+        res.send({success: 'ok'})
 
     } else {
-        res.send({error: "Error : invalid action requested."})
+
+        res.send({error: 'Error : invalid action requested.'})
+
     }
 
 });

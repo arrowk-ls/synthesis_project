@@ -13,17 +13,20 @@
     </nav>
 
     <div class="container mt-5">
+
+        <h4><b>Solution 1 :</b></h4><br>
+
         <div class="row">
             <div class="col-6">
                 <div class="form-group">
                     <label for="codeToConvert">Oracle code</label>
-                    <textarea class="form-control" id="codeToConvert" rows="15"></textarea>
+                    <textarea class="form-control" id="codeToConvert" rows="10"></textarea>
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <label for="convertedCode">Mysql code</label>
-                    <textarea class="form-control" id="convertedCode" rows="15"></textarea>
+                    <textarea class="form-control" id="convertedCode" rows="10"></textarea>
                 </div>
             </div>
         </div>
@@ -35,6 +38,98 @@
                 <button id="convert" type="button" class="btn btn-block btn-dark text-white">Convert</button>
             </div>
         </div>
+
+        <h4><b>Solution 2 :</b></h4><br>
+
+        <div class="row">
+            <div class="col-6">
+                <b>Oracle connection information :</b>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="oracle_hostname">Hostname</label>
+                            <input type="text" class="form-control" id="oracle_hostname" name="oracle_hostname" value="localhost" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="oracle_user">User</label>
+                            <input type="text" class="form-control" id="oracle_user" name="oracle_user" value="root" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="oracle_password">Password</label>
+                            <input type="password" class="form-control" id="oracle_password" name="oracle_password" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="oracle_port">Port</label>
+                            <input type="number" class="form-control" id="oracle_port" name="oracle_port" value="1521" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="oracle_database">Database</label>
+                            <input type="text" class="form-control" id="oracle_database" name="oracle_database" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <b>Mysql connection information :</b>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="mysql_hostname">Hostname</label>
+                            <input type="text" class="form-control" id="mysql_hostname" name="mysql_hostname" value="localhost" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="mysql_user">User</label>
+                            <input type="text" class="form-control" id="mysql_user" name="mysql_user" value="root" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="mysql_password">Password</label>
+                            <input type="password" class="form-control" id="mysql_password" name="mysql_password" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="mysql_port">Port</label>
+                            <input type="number" class="form-control" id="mysql_port" name="mysql_port" value="3306" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="mysql_database">Database</label>
+                            <input type="text" class="form-control" id="mysql_database" name="mysql_database" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-8">
+                <p id="migrateError" class="text-danger"></p>
+            </div>
+            <div class="col-2 offset-2">
+                <button id="migrate" type="button" class="btn btn-block btn-dark text-white">Migrate</button>
+            </div>
+        </div>
+
     </div>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>

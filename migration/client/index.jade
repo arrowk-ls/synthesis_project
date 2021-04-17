@@ -1,25 +1,90 @@
 doctype html
-html
-    head
-        title Database tests
-        meta(charset='UTF-8')
-        link(rel='stylesheet', href='css/bootstrap.min.css')
-    body
-        br
-        button(type='submit', id='run_mysql_test') Run mysql tests
-        div(id='results-mysql')
-        br
-        button(type='submit', id='run_sqlite_test') Run sqlite tests
-        div(id='results-sqlite')
-        br
-        button(type='submit', id='run_local_storage_test') Run local storage tests
-        div(id='results-local-storage')
-        br
-        button(type='submit', id='run_mongodb_test') Run mongodb tests
-        div(id='results-mongodb')
-        br
-        button(type='submit', id='run_redis_test') Run redis tests
-        div(id='results-redis')
-        script(src='js/jquery.min.js')
-        script(src='js/bootstrap.min.js')
-        script(src='js/lib.js')
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title SQLMigrate
+    link(rel='stylesheet' href='css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/addons.css')
+  body
+    nav.navbar.navbar-light.bg-dark
+      span.navbar-brand.mb-0.h1.text-white.bg- SQLMigrate
+    .container.mt-5
+      h4
+        b Solution 1 :
+      br
+      .row
+        .col-6
+          .form-group
+            label(for='codeToConvert') Oracle code
+            textarea#codeToConvert.form-control(rows='12')
+        .col-6
+          .form-group
+            label(for='convertedCode') Mysql code
+            textarea#convertedCode.form-control(rows='12')
+      .row
+        .col-8
+          p#convertError.text-danger
+        .col-2.offset-2
+          button#convert.btn.btn-block.btn-dark.text-white(type='button') Convert
+      h4
+        b Solution 2 :
+      br
+      .row
+        .col-6
+          b Oracle connection information :
+          .row.mt-3
+            .col-12
+              .form-group
+                label(for='oracle_hostname') Hostname
+                input#oracle_hostname.form-control(type='text' name='oracle_hostname' value='localhost')
+          .row
+            .col-6
+              .form-group
+                label(for='oracle_user') User
+                input#oracle_user.form-control(type='text' name='oracle_user' value='root')
+            .col-6
+              .form-group
+                label(for='oracle_password') Password
+                input#oracle_password.form-control(type='password' name='oracle_password')
+          .row
+            .col-6
+              .form-group
+                label(for='oracle_port') Port
+                input#oracle_port.form-control(type='number' name='oracle_port' value='1521')
+            .col-6
+              .form-group
+                label(for='oracle_database') Database
+                input#oracle_database.form-control(type='text' name='oracle_database')
+        .col-6
+          b Mysql connection information :
+          .row.mt-3
+            .col-12
+              .form-group
+                label(for='mysql_hostname') Hostname
+                input#mysql_hostname.form-control(type='text' name='mysql_hostname' value='localhost')
+          .row
+            .col-6
+              .form-group
+                label(for='mysql_user') User
+                input#mysql_user.form-control(type='text' name='mysql_user' value='root')
+            .col-6
+              .form-group
+                label(for='mysql_password') Password
+                input#mysql_password.form-control(type='password' name='mysql_password')
+          .row
+            .col-6
+              .form-group
+                label(for='mysql_port') Port
+                input#mysql_port.form-control(type='number' name='mysql_port' value='3306')
+            .col-6
+              .form-group
+                label(for='mysql_database') Database
+                input#mysql_database.form-control(type='text' name='mysql_database')
+      .row.mb-5
+        .col-8
+          p#migrateError.text-danger
+        .col-2.offset-2
+          button#migrate.btn.btn-block.btn-dark.text-white(type='button') Migrate
+    script(type='text/javascript' src='js/jquery.min.js')
+    script(type='text/javascript' src='js/bootstrap.min.js')
+    script(type='text/javascript' src='js/lib.js')
