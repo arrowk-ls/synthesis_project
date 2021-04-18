@@ -125,7 +125,6 @@ $(document).ready(function() {
             data: 'action=migrate&oracle_hostname=' + o_hostname + '&oracle_user=' + o_user + '&oracle_password=' + o_password + '&oracle_port=' + o_port + '&oracle_database=' + o_database +
                 '&mysql_hostname=' + m_hostname + '&mysql_user=' + m_user + '&mysql_password=' + m_password + '&mysql_port=' + m_port + '&mysql_database=' + m_database,
             success: response => {
-                alert(response)
                 if (response.success) {
                     alert('ok')
                 } else if (response.error) {
