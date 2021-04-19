@@ -126,13 +126,11 @@ $(document).ready(function() {
                 '&mysql_hostname=' + m_hostname + '&mysql_user=' + m_user + '&mysql_password=' + m_password + '&mysql_port=' + m_port + '&mysql_database=' + m_database,
             success: response => {
                 if (response.success) {
-                    alert('ok')
                 } else if (response.error) {
                     $('#migrateError').text(response.error)
                 }
             },
             error: error => {
-                alert('error')
                 $('#migrateError').text(error)
             }
         })
